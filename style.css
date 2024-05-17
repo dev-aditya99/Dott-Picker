@@ -1,0 +1,494 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgb(163, 54, 111); */
+    background-color: rgb(201, 229, 252);
+    /* rgb(64, 91, 119) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.game-name {
+    width: 100%;
+    text-align: center;
+}
+
+#game-name-h1 {
+    padding: 2rem;
+    font-size: 3rem;
+    font-family: "Ubuntu", "poppins", sans-serif;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.2rem;
+    color: rgb(72, 109, 148);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: default;
+    user-select: none;
+}
+
+#dott-picker-icon {
+    font-size: 3rem;
+    color: rgb(55, 90, 127);
+}
+
+.game-container {
+    width: 24rem;
+    height: 24rem;
+    background-color: rgb(72, 109, 148);
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px rgb(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.duration-div {
+    width: 5rem;
+    height: 3rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0 1rem 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Ubuntu", "poppins", sans-serif;
+    position: absolute;
+    top: 0.5rem;
+    /* right: -5rem; */
+    right: 0;
+    z-index: -1;
+    transition: all ease-in-out 0.2s;
+
+}
+
+#durationSpan1 {
+    font-size: 1.3rem;
+    color: rgb(13, 36, 54);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.duration-after-start {
+    right: -5rem;
+}
+
+.game-header {
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(13, 36, 54);
+    color: rgb(201, 229, 252);
+}
+
+.game-header-ul {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.game-header-ul-li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-header-ul-li>span {
+    font-size: 0.8rem;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-header-ul-li>span>span {
+    margin-left: 0.2rem;
+    font-size: 1.2rem;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+}
+
+
+.game-play-screen {
+    width: 100%;
+    height: 20rem;
+    /* display: grid; */
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(30, 1fr);
+    position: relative;
+}
+
+#dott {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: rgb(107, 193, 204);
+    cursor: pointer;
+    transition: all ease-in-out 1s;
+    display: none;
+    position: absolute;
+}
+
+#dott:active {
+    background-color: rgb(45, 144, 158);
+}
+
+.play-game-div {
+    width: 24rem;
+    height: 20rem;
+    background-color: rgb(58, 91, 127);
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+#play-game-id {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px rgb(13, 36, 54);
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    background-color: rgb(13, 36, 54);
+    color: rgb(201, 229, 252);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+#play-game-id>span {
+    font-size: 2rem;
+}
+
+#play-game-id:hover {
+    background-color: rgba(13, 36, 54, 0.7);
+}
+
+#new-play-game-id {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px rgb(13, 36, 54);
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    background-color: rgb(201, 229, 252);
+    color: rgb(13, 36, 54);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+
+.game-modes {
+    width: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.game-modes>button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px rgb(13, 36, 54);
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    /* background-color: rgb(13, 36, 54); */
+    color: rgb(201, 229, 252);
+    background-color: rgb(201, 229, 252);
+    color: rgb(13, 36, 54);
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    position: absolute;
+    top: -71px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.new-game-mode {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+}
+
+
+#easy-mode {
+    left: 20%;
+    /* top: 0; */
+    transition: all ease-in-out 0.2s;
+}
+
+#medium-mode {
+    left: 39.2%;
+    /* top: 0; */
+    transition: all ease-in-out 0.4s;
+}
+
+#hard-mode {
+    left: 65%;
+    /* top: 0; */
+    transition: all ease-in-out 0.6s;
+}
+
+.game-modes>button:hover {
+    background-color: rgb(13, 36, 54);
+    color: rgb(201, 229, 252);
+}
+
+.game-modes>button:focus {
+    background-color: rgb(13, 36, 54);
+    color: rgb(201, 229, 252);
+}
+
+
+.count-down-div {
+    width: 24rem;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    display: none;
+}
+
+#count-down-id {
+    font-size: 4rem;
+    font-family: "Ubuntu", "poppins", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    transition: all ease-in-out 0.2s;
+}
+
+
+.reload-game-div {
+    width: 24rem;
+    height: 20rem;
+    /* background-color: #fff; */
+    color: rgb(201, 229, 252);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 0.2s;
+}
+
+#relaod-game-title-id {
+    font-size: 1.6rem;
+    font-family: "Ubuntu", "poppins", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    word-spacing: 0.8px;
+}
+
+#relaod-game-id {
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: rgb(201, 229, 252);
+    background-color: rgb(13, 36, 54);
+}
+
+
+#relaod-game-id:hover {
+    background-color: rgba(13, 36, 54, 0.783);
+}
+
+.game-mode-description-area {
+    width: 24rem;
+    height: 24rem;
+    color: rgb(72, 109, 148);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0rem 0rem 1rem 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Ubuntu", "Poppins", sans-serif;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all ease-in-out 0.5s;
+    display: none;
+}
+
+#close-btn-div {
+    width: 100%;
+    padding: 0.5rem 0.3rem;
+}
+
+#close-btn-div>i {
+    font-size: 1.3rem;
+}
+
+.game-mode-description-header {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.game-mode-description-header>span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+.game-mode-description-header>span>span {
+    font-size: 1.4rem;
+    margin-left: 0.1rem;
+}
+
+
+.game-mode-description {
+    width: 100%;
+    height: 16rem;
+    /* background-color: #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#game-mode-desc-p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    word-spacing: 0.8px;
+}
+
+.game-mode-description>button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: "Ubuntu", "Poppins", sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgb(13, 36, 54);
+    color: rgb(201, 229, 252);
+    letter-spacing: 0.8px;
+    word-spacing: 1px;
+    display: none;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+.game-mode-description>button:hover {
+    background-color: rgb(13, 36, 54, 0.8);
+}
+
+/* #play-easy-mode{
+    display: inline-block;
+} */
+
+.how-to-play-game-div {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.how-to-play-p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+
+#game-info-id {
+    cursor: pointer;
+}
+
+
+.how-to-play-desc-area {
+    width: 100%;
+    /* height: 24rem;     */
+    background-color: rgb(201, 229, 252);
+    color: rgb(58, 91, 127);
+    padding: 1.5rem 1rem;
+    border: 1px solid rgb(58, 91, 127);
+    border-radius: 1rem 1rem 1rem 1rem;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 9%;
+    right: 43%;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 0.2s;
+}
+
+.how-to-play-desc-area>span {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.how-to-play-desc-area>p {
+    text-align: left;
+    line-height: 1.4;
+}
+
+.how-to-play-desc-area::after {
+    content: "";
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(58, 91, 127);
+    border: 1px solid rgb(58, 91, 127);
+    border-radius: 50% 50% 0 50%;
+    position: absolute;
+    bottom: -4px;
+    right: -12px;
+}

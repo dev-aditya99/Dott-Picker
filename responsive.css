@@ -1,0 +1,114 @@
+/* max width  */
+@media (max-width: 750px) {
+
+    .how-to-play-desc-area {
+        top: 1%;
+        right: 13%;
+    }
+
+    .how-to-play-desc-area::after {
+        content: "";
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0 0 0 0;
+        bottom: -6%;
+        right: 20%;
+        transform: rotate(45deg);
+    }
+
+}
+
+
+/* 522px */
+@media (max-width: 580px) {
+
+    .game-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .duration-div {
+        width: 5rem;
+        height: 3rem;
+        border-radius: 0.3rem;
+        right: 10rem !important;
+
+    }
+
+    .duration-after-start {
+        top: -6%;
+        right: 10% !important;
+    }
+
+    .game-play-screen {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .play-game-div {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        position: absolute;
+    }
+
+    .reload-game-div {
+        width: 100%;
+        height: 100%;
+    }
+
+    .game-mode-description-area {
+        width: 100%;
+        position: fixed;
+    }
+
+    .count-down-div {
+        width: 100%;
+        height: 100%;
+    }
+
+    .how-to-play-desc-area {
+        width: 95%;
+        top: 3%;
+        right: 2.5%;
+    }
+
+    .how-to-play-desc-area::after {
+        bottom: -5%;
+        right: 32%;
+        transform: rotate(45deg);
+        border: none;
+        display: none;
+    }
+
+    .game-modes {
+        width: 100%;
+    }
+
+    .game-modes>button {
+        position: static;
+        visibility: hidden;
+    }
+
+    #game-name-h1 {
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+
+}
+
+
+@media (max-width: 350px) {
+    .game-header-ul-li>span {
+        font-size: 0.6rem;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
